@@ -1,0 +1,27 @@
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for ="securityID">securityID:</label>
+        <input id="securityID" name="securityID" type="text">
+
+        <label for ="shiftDate">shiftDate:</label>
+        <input id="shiftDate" name="shiftDate" type="text">
+
+        <label for ="startTime">startTime:</label>
+        <input id="startTime" name="startTime" type="text">
+
+        <label for ="endTime">endTime:</label>
+        <input id="endTime" name="endTime" type="text">
+
+        <label for ="Shiftdesc">Shiftdesc:</label>
+        <input id="Shiftdesc" name="Shiftdesc" type="text">
+
+        <input type ="submit" value="SAVE">
+    </form>
+
+    {% if message %}
+    <p>{{message}}</p>
+    {% endif %}
+</body>
+</html>

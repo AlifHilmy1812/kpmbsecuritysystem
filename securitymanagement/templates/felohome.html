@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #22333b;
+            color: #333;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #0a0908;
+            overflow: hidden;
+            padding: 0;
+            text-align: center; /* Center-align the navbar */
+            
+        }
+
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex; /* Display items horizontally */
+            padding-left: 38%;
+        }
+
+        .navbar li {
+            margin: 0;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+
+
+        /* Hero Section Styles */
+ 
+        .hero {
+            background-image: url("{% static 'felomenu.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            text-align: center;
+            color: white;
+            padding: 50px 0;
+        }
+
+        .hero h1 {
+        font-size: 60px;
+        animation: bounce 2s infinite;
+        color: #000000;
+        -webkit-text-stroke: 2px #fffcfc; /* Add text stroke for outline effect (for Webkit-based browsers) */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a drop shadow for a pop-out effect */
+        border-radius: 50px; /* Add rounded corners */
+        padding: 10px 50px; /* Add padding for spacing */
+        }
+
+        /* Define the bounce animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+
+        /* Menu Cards Styles */
+        .menu-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .menu-card {
+            width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s; /* Add transition for smooth hover effect */
+        }
+
+        .menu-card h2 {
+            font-size: 24px;
+            background-color: #00000054;
+            color: white; /* Change the menu title color to white */
+            border-radius: 15px;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .menu-card p {
+            font-size: 16px;
+        }
+
+        .menu-card img-box {
+            background-color: #ccc;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .menu-card img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+
+        /* Remove the underline on links */
+        .menu-card h2 a {
+            text-decoration: none;
+            color: inherit; /* Inherit the color from the parent element */
+        }
+
+        /* Add hover effect to menu cards */
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+    
+
+        .img-box {
+            margin: 20px 0; /* Add spacing between the text and the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px; /* Adjust the height as needed */
+        }
+
+        .img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            border-radius: 10px; /* Add rounded corners to the image */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        }
+
+
+        .footer {
+        background-color: #0a0908;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        }
+
+        .footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a class="logo" href="#home">Security Management</a>
+    <ul>
+        <li><a href="http://127.0.0.1:8000/felohome">Home</a></li>
+        <li><a href="http://127.0.0.1:8000/loginpage">Log out</a></li>
+        <li></li>
+    </ul>
+</div>
+
+
+
+
+<div class="hero">
+    <br>
+    <br>
+    <br>
+    <h1>Felo Menu</h1>
+    
+</div>
+
+<div class="menu-cards">
+    <div class="menu-card">
+        <a href="http://127.0.0.1:8000/addsecuritydata">
+            <h2><a href="http://127.0.0.1:8000/addsecuritydata">Add security</a></h2>
+        </a>
+        <p>Register new security</p>
+        <div class="img-box">
+            <img src="{% static 'addsecurity.jpg' %}" alt="Image 1">
+        </div>
+    </div>
+    <div class="menu-card">
+        <a href="http://127.0.0.1:8000/feloviewsecurity">
+            <h2><a href="http://127.0.0.1:8000/feloviewsecurity">View security</a></h2>
+        </a>
+        <p>Viewing security table</p>
+        <div class="img-box">
+            <img src="{% static 'viewsecurity.jpg' %}" alt="Image 1">
+        </div>
+    </div>
+    <div class="menu-card">
+        <a href="http://127.0.0.1:8000/feloviewvisitor">
+            <h2><a href="http://127.0.0.1:8000/feloviewvisitor">View visitor</a></h2>
+        </a>
+        <p>view visitor data</p>
+        <div class="img-box">
+            <img src="{% static 'incident.jpg' %}" alt="Image 2">
+        </div>
+    </div>
+    <div class="menu-card">
+        <a href="http://127.0.0.1:8000/feloviewincident">
+            <h2><a href="http://127.0.0.1:8000/feloviewincident">View incident</a></h2>
+        </a>
+        <p>View incident report</p>
+        <div class="img-box">
+            <img src="{% static 'shift.jpg' %}" alt="Image 4">
+        </div>
+    </div>
+    <div class="menu-card">
+        <a href="http://127.0.0.1:8000/updelshift/">
+            <h2><a href="http://127.0.0.1:8000/updelshift/">Edit shift   </a></h2>
+        </a>
+        <p>Update new shift for security</p>
+        <div class="img-box">
+            <img src="{% static 'shift.jpg' %}" alt="Image 4">
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+    <p>&copy; 2023 Your Company Name</p>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Service</a>   
+</footer>
+
+
+</body>
+</html>

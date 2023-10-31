@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .login-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 100px;
+        }
+        .role-selection {
+            margin-bottom: 15px;
+        }
+        .role-selection label { 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Select Your Role</h2>
+        <div class="role-selection">
+            <label><input type="radio" name="role" value="guard"> Guard</label>
+            <label><input type="radio" name="role" value="felo"> Felo</label>
+        </div>
+        <button class="login-button" onclick="navigateToLogin()">Login</button>
+    </div>
+
+    <script>    
+        function navigateToLogin() {
+            var selectedRole = document.querySelector('input[name="role"]:checked').value;
+            switch (selectedRole) {
+                case "guard":
+                    window.location.href = "http://127.0.0.1:8000/loginguard";
+                    break;
+                case "felo":
+                    window.location.href = "http://127.0.0.1:8000/loginfelo";
+                    break;
+
+                default:
+                    alert("Please select a role.");
+            }
+        }
+    </script>
+</body>
+</html>

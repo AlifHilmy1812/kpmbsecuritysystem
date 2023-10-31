@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Security Shifts</title>
+</head>
+<body>
+    <h1>Edit Security Shifts</h1>
+    <table border="1">
+        <tr>
+            <th>Security ID</th>
+            <th>Shift Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Shift Description</th>
+        </tr>
+        {% for shift in all_security_shifts %}
+            <tr>
+                <td>{{ shift.securityID.securityID }}</td>
+                <td>{{ shift.shiftDate }}</td>
+                <td>{{ shift.startTime }}</td>
+                <td>{{ shift.endTime }}</td>
+                <td>{{ shift.Shiftdesc }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

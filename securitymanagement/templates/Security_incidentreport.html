@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Incident</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+            text-align: center; /* Center the text within the textboxes */
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="incidentID">Incident ID:</label>
+        <input id="incidentID" name="incidentID" type="text" placeholder="Enter incident ID">
+
+        <label for="incidentDate">Incident Date:</label>
+        <input id="incidentDate" name="incidentDate" type="text" placeholder="Enter incident date">
+
+        <label for="incidentLoc">Incident Location:</label>
+        <input id="incidentLoc" name="incidentLoc" type="text" placeholder="Enter incident location">
+
+        <label for="incidentDesc">Incident Description:</label>
+        <input id="incidentDesc" name="incidentDesc" type="text" placeholder="Enter incident description">
+
+        <input type="submit" value="SAVE">
+    </form>
+
+    {% if message %}
+    <p>{{message}}</p>
+    {% endif %}
+</body>
+</html>

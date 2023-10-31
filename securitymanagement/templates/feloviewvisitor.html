@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th><strong>Visitor Name</strong></th>
+            <th><strong>Visitor IC</strong></th>
+            <th><strong>Visitor Phone</strong></th>
+            <th><strong>Visitor Date</strong></th>
+        </tr>
+        {% for data in alldata %}
+            <tr>
+                <td>{{ data.visitorName }}</td>
+                <td>{{ data.visitorIc }}</td>
+                <td>{{ data.visitorPhone }}</td>
+                <td>{{ data.visitorDate }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
